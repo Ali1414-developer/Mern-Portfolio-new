@@ -1,0 +1,43 @@
+{
+  "name": "ali-raza-portfolio-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-ready MERN & ERP Personal Portfolio for Ali Raza deployable to Vercel in a single repository",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "client:dev": "npm run --prefix client dev",
+    "server:dev": "node --watch-path=server/src server/src/app.js",
+    "client:build": "npm run --prefix client build",
+    "build": "npm run client:build",
+    "seed": "node server/src/seed/seed.js",
+    "start": "node server/src/app.js",
+    "install:all": "npm install && npm install --prefix client && npm install --prefix server"
+  },
+  "keywords": [
+    "mern",
+    "portfolio",
+    "ali-raza",
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "tailwind",
+    "vercel"
+  ],
+  "author": "Ali Raza <aliraza777212@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "nodemailer": "^6.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
